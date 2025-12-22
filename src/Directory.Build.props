@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <JsonDiffPatchPackageVersion>2.0.2</JsonDiffPatchPackageVersion>
+    <JsonDiffPatchPackageVersion>2.0.3</JsonDiffPatchPackageVersion>
     <PackageIdPrefix>Ivy.</PackageIdPrefix>
     <Authors>Wei Chen</Authors>
     <PackageProjectUrl>https://github.com/weichch/system-text-json-jsondiffpatch</PackageProjectUrl>
