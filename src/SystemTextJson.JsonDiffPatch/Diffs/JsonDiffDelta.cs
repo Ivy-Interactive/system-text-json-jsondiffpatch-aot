@@ -381,11 +381,11 @@ namespace System.Text.Json.JsonDiffPatch.Diffs
                     {
                         if (i == 2)
                         {
-                            newDeltaArray.Add(opType);
+                            newDeltaArray.Add(JsonValue.Create(opType));
                         }
                         else
                         {
-                            newDeltaArray.Add(null);
+                            newDeltaArray.Add((JsonNode?)null);
                         }
                     }
 

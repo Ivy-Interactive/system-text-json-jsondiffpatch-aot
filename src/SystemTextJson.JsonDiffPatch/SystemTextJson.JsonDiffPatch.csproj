@@ -10,13 +10,7 @@
     <Description>High-performance, low-allocating JSON object diff and patch extension for System.Text.Json. Support generating patch document in RFC 6902 JSON Patch format. Provides bonus DeepEquals and DeepClone methods.</Description>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net462'" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
-  </ItemGroup>
+  <!-- System.Text.Json is included in .NET 10 -->
 
   <ItemGroup>
     <Compile Remove="JsonBytes.cs" />
