@@ -2,10 +2,21 @@
 using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json.Nodes;
-using System.Text.Json.Serialization.Metadata;
+using System.Text.Json.Serialization;
 
 namespace System.Text.Json.JsonDiffPatch
 {
+    [JsonSerializable(typeof(JsonElement))]
+    [JsonSerializable(typeof(byte[]))]
+    [JsonSerializable(typeof(string))]
+    [JsonSerializable(typeof(char))]
+    [JsonSerializable(typeof(DateTime))]
+    [JsonSerializable(typeof(DateTimeOffset))]
+    [JsonSerializable(typeof(Guid))]
+    internal partial class JsonDiffPatchSerializerContext : JsonSerializerContext
+    {
+    }
+
     internal struct JsonString
     {
         internal static readonly JsonSerializerOptions SerializerOptions;
@@ -14,7 +25,7 @@ namespace System.Text.Json.JsonDiffPatch
         {
             SerializerOptions = new()
             {
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver(),
+                TypeInfoResolver = JsonDiffPatchSerializerContext.Default,
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
 
@@ -229,7 +240,7 @@ namespace System.Text.Json.JsonDiffPatch
         private string? GetJsonString() => Parent is not null
             ? Parent.ToJsonString(SerializerOptions)
             : HasElement
-                ? JsonSerializer.Serialize(Element, SerializerOptions)
+                ? JsonSerializer.Serialize(Element, JsonDiffPatchSerializerContext.Default.JsonElement)
                 : null;
 
         public int CompareTo(ref JsonString another)

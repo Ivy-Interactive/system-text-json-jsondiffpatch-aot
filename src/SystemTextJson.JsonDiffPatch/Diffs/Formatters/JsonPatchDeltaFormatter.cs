@@ -51,7 +51,7 @@ namespace System.Text.Json.JsonDiffPatch.Diffs.Formatters
                 {PropertyNamePath, PathBuilder.ToString()},
                 {PropertyNameValue, delta.GetAdded()}
             };
-            existingValue!.AsArray().Add(op);
+            existingValue!.AsArray().Add((JsonNode)op);
             return existingValue;
         }
 
@@ -63,7 +63,7 @@ namespace System.Text.Json.JsonDiffPatch.Diffs.Formatters
                 {PropertyNamePath, PathBuilder.ToString()},
                 {PropertyNameValue, delta.GetNewValue()}
             };
-            existingValue!.AsArray().Add(op);
+            existingValue!.AsArray().Add((JsonNode)op);
             return existingValue;
         }
 
@@ -74,7 +74,7 @@ namespace System.Text.Json.JsonDiffPatch.Diffs.Formatters
                 {PropertyNameOperation, OperationNameRemove},
                 {PropertyNamePath, PathBuilder.ToString()}
             };
-            existingValue!.AsArray().Add(op);
+            existingValue!.AsArray().Add((JsonNode)op);
             return existingValue;
         }
 

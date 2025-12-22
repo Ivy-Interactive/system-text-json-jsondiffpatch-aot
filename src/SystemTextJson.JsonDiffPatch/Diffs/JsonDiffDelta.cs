@@ -381,7 +381,7 @@ namespace System.Text.Json.JsonDiffPatch.Diffs
                     {
                         if (i == 2)
                         {
-                            newDeltaArray.Add(JsonValue.Create(opType));
+                            newDeltaArray.Add((JsonNode?)JsonValue.Create(opType));
                         }
                         else
                         {

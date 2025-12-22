@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Nodes;
-using System.Text.Json.Serialization.Metadata;
 
 namespace System.Text.Json.JsonDiffPatch.Xunit
 {
@@ -8,18 +7,10 @@ namespace System.Text.Json.JsonDiffPatch.Xunit
     /// </summary>
     public static class JsonAssert
     {
-        private static readonly JsonSerializerOptions SerializerOptions;
-
-        static JsonAssert()
+        private static readonly JsonSerializerOptions SerializerOptions = new()
         {
-            SerializerOptions = new()
-            {
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver(),
-                WriteIndented = true
-            };
-
-            SerializerOptions.MakeReadOnly();
-        }
+            WriteIndented = true
+        };
 
         /// <summary>
         /// Tests whether two JSON objects are equal. Note that when comparing the specified objects,

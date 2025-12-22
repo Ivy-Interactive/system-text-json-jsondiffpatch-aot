@@ -8,6 +8,13 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
 
+  <!-- AOT/Trimming compatibility -->
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <IsTrimmable>true</IsTrimmable>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+
   <PropertyGroup>
     <JsonDiffPatchPackageVersion>2.0.0</JsonDiffPatchPackageVersion>
     <Authors>Wei Chen</Authors>
