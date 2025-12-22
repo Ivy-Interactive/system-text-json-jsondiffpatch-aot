@@ -11,12 +11,13 @@ namespace System.Text.Json.JsonDiffPatch.Nunit
         private readonly JsonNode? _expected;
         private JsonDiffOptions? _diffOptions;
         private Func<JsonNode, string>? _outputFormatter;
-        
+
         protected JsonDiffConstraint(JsonNode? expected)
         {
             _expected = expected;
         }
 
+        public override string Description => "JSON comparison constraint";
         public virtual Func<JsonNode, string>? OutputFormatter => _outputFormatter;
         public JsonNode? Delta { get; private set; }
 

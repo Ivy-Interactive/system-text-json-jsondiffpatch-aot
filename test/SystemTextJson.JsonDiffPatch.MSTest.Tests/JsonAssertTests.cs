@@ -49,7 +49,7 @@ namespace SystemTextJson.JsonDiffPatch.MsTest.Tests
             var json1 = JsonNode.Parse("{\"foo\":\"bar\",\"baz\":\"qux\"}");
             var json2 = JsonNode.Parse("{\"foo\":\"baz\"}");
 
-            var error = Assert.ThrowsException<AssertFailedException>(
+            var error = Assert.ThrowsExactly<AssertFailedException>(
                 () => Assert.That.JsonAreEqual(json1, json2));
 
             StringAssert.Contains(error.Message, "JsonAssert.AreEqual() failure.");
@@ -61,7 +61,7 @@ namespace SystemTextJson.JsonDiffPatch.MsTest.Tests
             var json1 = JsonNode.Parse("{\"foo\":\"bar\",\"baz\":\"qux\"}");
             var json2 = JsonNode.Parse("{\"foo\":\"baz\"}");
 
-            var error = Assert.ThrowsException<AssertFailedException>(
+            var error = Assert.ThrowsExactly<AssertFailedException>(
                 () => Assert.That.JsonAreEqual(json1, json2, true));
 
             StringAssert.Contains(error.Message, "JsonAssert.AreEqual() failure.");
@@ -76,7 +76,7 @@ namespace SystemTextJson.JsonDiffPatch.MsTest.Tests
             var json1 = JsonNode.Parse("{\"foo\":\"bar\",\"baz\":\"qux\"}");
             var json2 = JsonNode.Parse("{\"foo\":\"baz\"}");
 
-            var error = Assert.ThrowsException<AssertFailedException>(() => Assert.That.JsonAreEqual(json1,
+            var error = Assert.ThrowsExactly<AssertFailedException>(() => Assert.That.JsonAreEqual(json1,
                 json2, _ => "Custom message"));
 
             StringAssert.Contains(error.Message, "JsonAssert.AreEqual() failure.");
@@ -116,7 +116,7 @@ namespace SystemTextJson.JsonDiffPatch.MsTest.Tests
             JsonNode? json1 = null;
             JsonNode? json2 = null;
 
-            var error = Assert.ThrowsException<AssertFailedException>(
+            var error = Assert.ThrowsExactly<AssertFailedException>(
                 () => Assert.That.JsonAreNotEqual(json1, json2));
 
             Assert.IsNotNull(error);
@@ -128,7 +128,7 @@ namespace SystemTextJson.JsonDiffPatch.MsTest.Tests
             var json1 = JsonNode.Parse("{\"foo\":\"bar\",\"baz\":\"qux\"}");
             var json2 = JsonNode.Parse("{\"baz\":\"qux\",\"foo\":\"bar\"}");
 
-            var error = Assert.ThrowsException<AssertFailedException>(
+            var error = Assert.ThrowsExactly<AssertFailedException>(
                 () => Assert.That.JsonAreNotEqual(json1, json2));
 
             StringAssert.Contains(error.Message, "JsonAssert.AreNotEqual() failure.");
