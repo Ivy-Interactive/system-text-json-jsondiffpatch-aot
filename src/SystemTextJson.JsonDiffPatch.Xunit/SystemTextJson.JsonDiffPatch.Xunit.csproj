@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>SystemTextJson.JsonDiffPatch.Xunit</PackageId>
+    <PackageId>$(PackageIdPrefix)SystemTextJson.JsonDiffPatch.Xunit</PackageId>
     <PackageTags>xunit;assert;compare;json;system-text-json</PackageTags>
     <Description>Extension methods for XUnit to compare JSON in unit tests.</Description>
   </PropertyGroup>

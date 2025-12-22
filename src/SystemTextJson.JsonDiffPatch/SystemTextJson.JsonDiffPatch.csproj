@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>SystemTextJson.JsonDiffPatch</PackageId>
+    <PackageId>$(PackageIdPrefix)SystemTextJson.JsonDiffPatch</PackageId>
     <PackageTags>json;diff;compare;patch;system-text-json;jsondiffpatch</PackageTags>
     <Description>High-performance, low-allocating JSON object diff and patch extension for System.Text.Json. Support generating patch document in RFC 6902 JSON Patch format. Provides bonus DeepEquals and DeepClone methods.</Description>
   </PropertyGroup>
