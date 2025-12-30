@@ -120,8 +120,10 @@ namespace System.Text.Json.JsonDiffPatch
                         }
 
                         // We have two objects equal by position or other criteria
+                        // Note: entry.LeftIndex and entry.RightIndex are indices in the trimmed arrays,
+                        // so we need to offset by commonHead to get indices in the original arrays
                         var itemDiff = new JsonDiffDelta();
-                        DiffInternal(ref itemDiff, left[entry.LeftIndex], right[entry.RightIndex], options);
+                        DiffInternal(ref itemDiff, left[entry.LeftIndex + commonHead], right[entry.RightIndex + commonHead], options);
                         if (itemDiff.Document is not null)
                         {
                             delta.ArrayChange(i, false, itemDiff);
