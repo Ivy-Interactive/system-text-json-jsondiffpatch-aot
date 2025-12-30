@@ -15,14 +15,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <JsonDiffPatchPackageVersion>2.0.3</JsonDiffPatchPackageVersion>
+    <JsonDiffPatchPackageVersion>2.0.4</JsonDiffPatchPackageVersion>
     <PackageIdPrefix>Ivy.</PackageIdPrefix>
     <Authors>Wei Chen</Authors>
     <PackageProjectUrl>https://github.com/weichch/system-text-json-jsondiffpatch</PackageProjectUrl>
     <Copyright>Copyright © Wei Chen 2024</Copyright>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageReleaseNotes>AOT-compatible fork with .NET 10 support</PackageReleaseNotes>
+    <PackageReleaseNotes>AOT-compatible fork with .NET 10 support + Some bugfixes</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>
